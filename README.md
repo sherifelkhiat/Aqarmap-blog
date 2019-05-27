@@ -7,6 +7,19 @@ Installation guide:
 - run composer install
 - create new database 
 - setup your env file ( insert database credentials )
+
+        APP_URL=http://your-url
+        MIX_APP_URL="${APP_URL}"
+
+        LOG_CHANNEL=stack
+
+        DB_CONNECTION=mysql
+        DB_HOST=127.0.0.1
+        DB_PORT=3306
+        DB_DATABASE=your-database-name
+        DB_USERNAME=username
+        DB_PASSWORD=password
+
 - run "php artisan migrate"
 - run "php artisan db:seed --class=UsersTableSeeder"
 - run "php artisan key:generate"
