@@ -9,6 +9,8 @@ Installation guide:
 - setup your env file ( insert database credentials )
 - run "php artisan migrate"
 - run "php artisan db:seed --class=UsersTableSeeder"
+- run "php artisan key:generate"
+- run "php artisan jwt:secret"
 - run "npm install"
 - run "npm run watch"
 

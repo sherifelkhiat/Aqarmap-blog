@@ -1,6 +1,7 @@
 <template>
     <div class="container">
         <h1>Show Article</h1>
+        <h3>Category: {{ article.category.name }}</h3>
         <div class="card card-default">
             <div class="card-header">{{ article.title }}</div>
 
