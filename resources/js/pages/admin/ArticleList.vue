@@ -15,7 +15,7 @@
                             <th scope="col">Id</th>
                             <th scope="col">Title</th>
                             <th scope="col">Category</th>
-                            <th scope="col">Date d'inscription</th>
+                            <th scope="col">Created At</th>
                         </tr>
                         <tr 
                             v-for="article in articles" 
@@ -24,7 +24,7 @@
                             >
                             <th scope="row">{{ article.id }}</th>
                             <td>{{ article.title }}</td>
-                            <td>{{ article.category.name }}</td>
+                            <td><p v-if="article.category !== null">{{ article.category.name }}</p></td>
                             <td>{{ article.created_at}}</td>
 
                         </tr>

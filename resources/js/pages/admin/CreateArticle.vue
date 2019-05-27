@@ -3,7 +3,7 @@
           <div class="col-md-10">
           <div class="card card-default">
               <div class="card-header">Create An Article</div>
-        
+              <FormError v-bind:errors="validationErrors"></FormError>
               <form @submit.prevent="addArticle" class="card-body">
                   <div class="row">
                     <div class="col-md-8">
@@ -46,12 +46,14 @@
 </template>
 
 <script>
-import { VueEditor } from 'vue2-editor';
+import { VueEditor } from 'vue2-editor'
+import FormError from '../../components/FormError.vue'
     export default {
       data(){
           return {
             article:{},
-            categories: null
+            categories: null,
+            validationErrors: null
           }
       },
       mounted() {
@@ -62,6 +64,10 @@ import { VueEditor } from 'vue2-editor';
               let uri = `/auth/article`
               this.axios.post(uri, this.article).then((response) => {
                   this.$router.push({name: `admin.article`})
+              }).catch(error => {
+                  if (error.response.status == 422){
+                    this.validationErrors = error.response.data.errors;
+                    }
               })
           },
           changeItem: function changeItem(event) {
@@ -80,7 +86,8 @@ import { VueEditor } from 'vue2-editor';
           }
       },
       components: {
-         VueEditor
+         VueEditor,
+         FormError
       }
   }
 </script>

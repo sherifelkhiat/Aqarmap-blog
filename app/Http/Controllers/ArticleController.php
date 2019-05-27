@@ -49,7 +49,7 @@ class ArticleController extends Controller
         $this->validate($request, [
             'title' => 'required|max:500',
             'content' => 'required',
-            'category_id' => 'required',
+            'category_id' => 'numeric',
         ]);
 
         $article = $this->model->create($request->only($this->model->getModel()->fillable));
