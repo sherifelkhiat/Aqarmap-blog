@@ -3259,6 +3259,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -54132,6 +54133,8 @@ var render = function() {
     { staticClass: "container" },
     [
       _c("h1", [_vm._v("Show Article")]),
+      _vm._v(" "),
+      _c("h3", [_vm._v("Category: " + _vm._s(_vm.article.category.name))]),
       _vm._v(" "),
       _c("div", { staticClass: "card card-default" }, [
         _c("div", { staticClass: "card-header" }, [
